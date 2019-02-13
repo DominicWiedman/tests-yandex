@@ -1,31 +1,20 @@
-// const nums = [90,22, 12,15, 9, 8, 7, 3,1, 5, 15], k = 17
-
+/** @returns Boolean */
 module.exports = function (nums, k) {
-    let first = 0
-    let last = nums.length - 1
-    while (first < last) {
-        let sum = k - nums[first]
-        s = nums.indexOf(sum)
-        if (s != -1) {
-            return true
-        } else {
-            first++
-        }
+    for (let i in nums) {
+        s = k - nums[i]
+        n = nums.indexOf(s)
+        Boolean(n !== -1)
     }
 }
 
-// function sum(nums, k) {
-//     let first = 0
-//     let last = nums.length - 1
-//     while (first < last) {
-//         let sum = k - nums[first]
-//         s = nums.indexOf(sum)
-//         if (s != -1) {
-//             return console.log(first,s)
-//         } else {
-//             first++
-//         }
-//     }
-// }
-//
-// sum(nums, k)
+const nums = [10, 15, 3, 7], k = 17
+
+function sum(nums, k) {
+    for (let i in nums) {
+        s = k - nums[i]
+        n = nums.indexOf(s)
+        Boolean(n !== -1)
+    }
+}
+
+sum(nums, k)
