@@ -7,28 +7,22 @@
  */
 
 module.exports = function merge(nums1, m, nums2, n) {
-    for (let i in nums1) {
-        if (nums1[i] == 0) {
-            for (let j in nums2) {
-                nums1[i] = nums2[j]
-            }
-        }
+    for (let i in nums2) {
+        nums1.splice(m, n, nums2[i])
+        n--
+        m++
     }
 }
 
-const nums1 = [46, 55, 88, 0, 0, 0, 0], nums2 = [18, 29, 80, 90]
+const nums1 = [46, 55, 88, 0, 0, 0, 0], m = 3, nums2 = [18, 29, 80, 90], n = 4
 
-function merge(nums1, nums2) {
-    for (let i in nums1) {
-        if (nums1[i] == 0) {
-            for (let j in nums2) {
-                if (nums1[i] != nums2[j]) {
-                    nums1[i] = nums2[j]
-                    console.log(nums1)
-                }
-            }
-        }
+function merge(nums1, m, nums2, n) {
+    for (let i in nums2) {
+        nums1.splice(m, n, nums2[i])
+        m++
+        n--
     }
+    console.log(nums1)
 }
 
-merge(nums1, nums2)
+merge(nums1, m, nums2, n)
